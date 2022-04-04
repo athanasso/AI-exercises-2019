@@ -1,0 +1,101 @@
+CLIPS> (load "C:/Users/timos/Desktop/University of West Attica Files/5th Semester/Artificial Intelligence/2nd Assignment/pacman_simple.clp")
+Defining deffacts: static_facts
+Defining deffacts: moving_facts
+Defining defrule: begin +j+j
+Defining defrule: reach_goal +j+j+j+j+j
+Defining defrule: move_left +j+j+j
+Defining defrule: move_right =j+j+j
+Defining defrule: eat_fruit =j+j+j
+TRUE
+CLIPS> (reset)
+<== f-0     (initial-fact)
+==> f-0     (initial-fact)
+==> f-1     (cell_at 1 1 fruits 0)
+==> f-2     (cell_at 1 2 fruits 1)
+==> f-3     (cell_at 1 3 fruits 0)
+==> f-4     (cell_at 1 4 fruits 3)
+==> f-5     (pacman_at 1 2)
+CLIPS> (run)
+FIRE    1 begin: f-0
+FIRE    2 eat_fruit: f-5,f-2
+<== f-2     (cell_at 1 2 fruits 1)
+==> f-6     (cell_at 1 2 fruits 0)
+FIRE    3 move_left: f-5,f-1
+<== f-5     (pacman_at 1 2)
+==> f-7     (pacman_at 1 1)
+FIRE    4 move_right: f-7,f-6
+<== f-7     (pacman_at 1 1)
+==> f-8     (pacman_at 1 2)
+FIRE    5 move_left: f-8,f-1
+<== f-8     (pacman_at 1 2)
+==> f-9     (pacman_at 1 1)
+FIRE    6 move_right: f-9,f-6
+<== f-9     (pacman_at 1 1)
+==> f-10    (pacman_at 1 2)
+FIRE    7 move_right: f-10,f-3
+<== f-10    (pacman_at 1 2)
+==> f-11    (pacman_at 1 3)
+FIRE    8 move_left: f-11,f-6
+<== f-11    (pacman_at 1 3)
+==> f-12    (pacman_at 1 2)
+FIRE    9 move_left: f-12,f-1
+<== f-12    (pacman_at 1 2)
+==> f-13    (pacman_at 1 1)
+FIRE   10 move_right: f-13,f-6
+<== f-13    (pacman_at 1 1)
+==> f-14    (pacman_at 1 2)
+FIRE   11 move_right: f-14,f-3
+<== f-14    (pacman_at 1 2)
+==> f-15    (pacman_at 1 3)
+FIRE   12 move_left: f-15,f-6
+<== f-15    (pacman_at 1 3)
+==> f-16    (pacman_at 1 2)
+FIRE   13 move_left: f-16,f-1
+<== f-16    (pacman_at 1 2)
+==> f-17    (pacman_at 1 1)
+FIRE   14 move_right: f-17,f-6
+<== f-17    (pacman_at 1 1)
+==> f-18    (pacman_at 1 2)
+FIRE   15 move_left: f-18,f-1
+<== f-18    (pacman_at 1 2)
+==> f-19    (pacman_at 1 1)
+FIRE   16 move_right: f-19,f-6
+<== f-19    (pacman_at 1 1)
+==> f-20    (pacman_at 1 2)
+FIRE   17 move_left: f-20,f-1
+<== f-20    (pacman_at 1 2)
+==> f-21    (pacman_at 1 1)
+FIRE   18 move_right: f-21,f-6
+<== f-21    (pacman_at 1 1)
+==> f-22    (pacman_at 1 2)
+FIRE   19 move_right: f-22,f-3
+<== f-22    (pacman_at 1 2)
+==> f-23    (pacman_at 1 3)
+FIRE   20 move_left: f-23,f-6
+<== f-23    (pacman_at 1 3)
+==> f-24    (pacman_at 1 2)
+FIRE   21 move_left: f-24,f-1
+<== f-24    (pacman_at 1 2)
+==> f-25    (pacman_at 1 1)
+FIRE   22 move_right: f-25,f-6
+<== f-25    (pacman_at 1 1)
+==> f-26    (pacman_at 1 2)
+FIRE   23 move_right: f-26,f-3
+<== f-26    (pacman_at 1 2)
+==> f-27    (pacman_at 1 3)
+FIRE   24 move_right: f-27,f-4
+<== f-27    (pacman_at 1 3)
+==> f-28    (pacman_at 1 4)
+FIRE   25 eat_fruit: f-28,f-4
+<== f-4     (cell_at 1 4 fruits 3)
+==> f-29    (cell_at 1 4 fruits 2)
+FIRE   26 eat_fruit: f-28,f-29
+<== f-29    (cell_at 1 4 fruits 2)
+==> f-30    (cell_at 1 4 fruits 1)
+FIRE   27 eat_fruit: f-28,f-30
+<== f-30    (cell_at 1 4 fruits 1)
+==> f-31    (cell_at 1 4 fruits 0)
+FIRE   28 reach_goal: f-1,f-6,f-3,f-31
+All the fruits have been eaten, pacman won!
+[PRCCODE4] Execution halted during the actions of defrule reach_goal.
+CLIPS> 
